@@ -6,9 +6,7 @@ import MaxWidthWrapper from "./max-width-wrapper";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 
-interface Props {}
-
-async function Navbar({}: Props) {
+async function Navbar() {
   const { getUser } = getKindeServerSession();
 
   const user = await getUser();

@@ -167,13 +167,13 @@ export default function Home() {
               </div>
               <div className="text-lg leading-8">
                 <p>
-                  "The case feels durable and I even got a compliment on the
-                  design. I had the case for two and a half months now and{" "}
+                  &quot;The case feels durable and I even got a compliment on
+                  the design. I had the case for two and a half months now and{" "}
                   <span className="bg-slate-800 p-0.5 text-white">
                     the image is super clear
                   </span>
                   . My previous case had already started fading into a
-                  yellow-ish color after a coiple weeks. Love it!"
+                  yellow-ish color after a coiple weeks. Love it!&quot;
                 </p>
               </div>
 
@@ -203,14 +203,14 @@ export default function Home() {
               </div>
               <div className="text-lg leading-8">
                 <p>
-                  "I bought the Galaxy Defender phone case, and it&apos;s
+                  &quot;I bought the Galaxy Defender phone case, and it&apos;s
                   perfect! Fits my phone snugly, saved it from a drop, and looks
                   stylish. The built-in stand is super handy for watching
                   videos. Got lots of compliments already.{" "}
                   <span className="bg-slate-800 p-0.5 text-white">
                     Worth every penny!
                   </span>
-                  "
+                  &quot;
                 </p>
               </div>
 
