@@ -1,6 +1,6 @@
+import prisma from "@/lib/db";
 import { stripe } from "@/lib/stripe";
 import { headers } from "next/headers";
-import prisma from "@/lib/db";
 import Stripe from "stripe";
 
 export async function POST(req: Request) {
@@ -34,8 +34,8 @@ export async function POST(req: Request) {
         throw new Error("Invalid request metadata");
       }
 
-      const billingAddress = session.customer_details!.address;
       const shippingAddress = session.shipping_details!.address;
+      const billingAddress = session.customer_details!.address;
 
       await prisma.order.update({
         where: { id: orderId },
