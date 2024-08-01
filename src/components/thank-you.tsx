@@ -24,7 +24,7 @@ function ThankYou({ orderId }: Props) {
         <div className=" flex flex-col items-center gap-2">
           <Loader2 className="size-8 animate-spin text-zinc-500" />
           <h3 className="text-xl font-semibold">Loading your order...</h3>
-          <p>This won't take long.</p>
+          <p>This won&apos;t take long.</p>
         </div>
       </div>
     );
@@ -58,7 +58,7 @@ function ThankYou({ orderId }: Props) {
             Your case is on the way.
           </h1>
           <p className="mt-2 text-base text-zinc-500">
-            We've received your order and are now processing it.
+            We&apos;ve received your order and are now processing it.
           </p>
 
           <div className="mt-12 text-sm font-medium">
@@ -71,10 +71,10 @@ function ThankYou({ orderId }: Props) {
           <div className="mt-10 flex flex-auto flex-col">
             <h4>You made a great choice!</h4>
             <p className="mt-2 text-sm text-zinc-600">
-              We at CobraCase believe that a phone case doesn't only need to
-              look good, but also last you for the years to come. We offer a
-              5-year print guarantee: If your case isn't of the highest quality,
-              we'll replace it for free.
+              We at CobraCase believe that a phone case doesn&apos;t only need
+              to look good, but also last you for the years to come. We offer a
+              5-year print guarantee: If your case isn&apos;t of the highest
+              quality, we&apos;ll replace it for free.
             </p>
           </div>
         </div>
