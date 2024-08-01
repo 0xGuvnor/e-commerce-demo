@@ -2,6 +2,8 @@ import prisma from "@/lib/db";
 import { stripe } from "@/lib/stripe";
 import { headers } from "next/headers";
 import Stripe from "stripe";
+import { resend } from "@/lib/resend";
+import OrderReceivedEmail from "@/components/emails/order-received";
 
 export async function POST(req: Request) {
   try {
@@ -64,8 +66,27 @@ export async function POST(req: Request) {
         },
       });
 
-      return Response.json({ result: event, ok: true });
+      await resend.emails.send({
+        from: "CobraCase <no-reply@yokeyeong.xyz>",
+        to: [event.data.object.customer_details.email],
+        subject: "Thanks for your order!",
+        react: OrderReceivedEmail({
+          orderId,
+          orderDate: new Date().toLocaleDateString(),
+          // @ts-ignore
+          shippingAddress: {
+            name: session.customer_details!.name!,
+            city: shippingAddress!.city!,
+            country: shippingAddress!.country!,
+            postalCode: shippingAddress!.postal_code!,
+            street: shippingAddress!.line1!,
+            state: shippingAddress!.state!,
+          },
+        }),
+      });
     }
+
+    return Response.json({ result: event, ok: true }, { status: 200 });
   } catch (error) {
     console.error(error);
 

@@ -65,7 +65,7 @@ function DesignConfigurator({ configId, imageDimensions, imgUrl }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const { startUpload } = useUploadThing("imageUploader");
 
-  const { mutate: saveConfig } = useMutation({
+  const { mutate: saveConfig, isPending } = useMutation({
     mutationKey: ["save-config"],
     mutationFn: (args: UpdateConfigArgs) => {
       return Promise.all([saveConfiguration(), updateConfig(args)]);
@@ -361,6 +361,7 @@ function DesignConfigurator({ configId, imageDimensions, imgUrl }: Props) {
 
               <Button
                 size={"sm"}
+                disabled={isPending}
                 onClick={() =>
                   saveConfig({
                     configId,
@@ -372,7 +373,13 @@ function DesignConfigurator({ configId, imageDimensions, imgUrl }: Props) {
                 }
                 className="w-full"
               >
-                Continue <ArrowRight className="ml-1.5 inline size-4" />
+                {isPending ? (
+                  <span className="animate-pulse">Saving...</span>
+                ) : (
+                  <>
+                    Continue <ArrowRight className="ml-1.5 inline size-4" />
+                  </>
+                )}
               </Button>
             </div>
           </div>

@@ -31,7 +31,7 @@ async function Navbar() {
 
                 {isAdmin && (
                   <Button asChild variant={"ghost"} size={"sm"}>
-                    <Link href={"/api/auth/logout"} className={cn()}>
+                    <Link href={"/dashboard"} className={cn()}>
                       Dashboard
                     </Link>
                   </Button>
