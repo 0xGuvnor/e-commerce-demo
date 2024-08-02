@@ -68,7 +68,7 @@ function ReviewGrid() {
           />
           <ReviewColumn
             reviews={column3.flat()}
-            msPerPixel={10}
+            msPerPixel={5}
             className="hidden md:block"
           />
         </>
